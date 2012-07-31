@@ -7,7 +7,13 @@ var parseAccountInfo = function(data){
 };
 
 $(document).ready(function(){
-	var aiform = $("#accountInfo");
+	var aiform = $("#accountInfo"),
+		reliableValue ="No",
+		jobValue ="No",
+		replaceValue ="No",
+		trustValue ="No",
+		sexValue,
+		id = Math.floor(Math.random()*100000001);
 	});
 		
 	function validate(){
@@ -244,18 +250,18 @@ $(document).ready(function(){
 	}
 	
 	function deleteItem(){
-		var ask = confirm("Delete contact?")
+		var ask = confirm("Delete contact?");
 		if (ask){
 			localStorage.removeItem(this.key);
 			window.location.reload();
 		}else{
-			alert("Contact not removed")
+			alert("Contact not removed");
 		}
 	}
 	
 	function deleteData(){
 		if(localStorage.legnth === 0){
-			alert("Nothing to delete!")
+			alert("Nothing to delete!");
 		}else{
 			localStorage.clear();
 			alert("All accounts deleted.");
@@ -334,7 +340,7 @@ $(document).ready(function(){
 	wheelHouse();
 	
 	//links and submit button
-	$("#remove").on("click", deleteData)
-	$("#allAccounts").on("click", getData)
-	$("#submit").on("click", validate)
+	$("#remove").on("click", deleteData);
+	$("#allAccounts").on("click", getData);
+	$("#submit").on("click", validate);
 
