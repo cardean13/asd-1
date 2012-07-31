@@ -6,22 +6,20 @@ var parseAccountInfo = function(data){
 		console.log(data);
 };
 
-$(document).bind('pageinit',function(){
-
-	var aiform = $("#addAccount");
-	
-	aiform.validate();
+$(document).ready(function(){
+	var aiform = $("#accountInfo");
 	});
-	
-	{
-	var	invalidHandler = function (form, validator){},
-		submitHandler = function(){
-			var data = aiform.serializeArray();
-			parseAccountInfo(data);
-		}
-	}
-;
-
+		
+	function validate(){
+		var aiform;	
+		aiform.validate({
+			invalidHandler: function (form, validator){},
+			submitHandler: function(){
+				var data = aiform.serializeArray();
+			}
+		});
+	};
+				
 //wait till DOM is ready
 //window.addEventListener("DOMContentLoaded", function(){
 
@@ -119,20 +117,20 @@ $(document).bind('pageinit',function(){
 		getSelectedRadio();
 		getCheckBoxValue();		
 		var item = {};
-			item.fname =["First Name:", e("fname").value];
-			item.lname =["Last Name:", e("lname").value];
+			item.fname =["First Name:", $("#fname").val()];
+			item.lname =["Last Name:", $("#lname").val()];
 			item.sex =["Sex:", sexValue];
-			item.age =["Age:", e("ageRange").value];
+			item.age =["Age:", $("#ageRange").val()];
 			item.reliable =["Is the borrower reliable?", reliableValue];
 			item.job =["Do they have a job?", jobValue];
 			item.replace =["If broken, could they replace it?", replaceValue];
 			item.trust =["Do you fully trust them?", trustValue];
 		//	item.group =["Group:", e("groups").value];
-			item.dname =["Disc Name:", e("dname").value];
-			item.value =["Value:", e("value").value];
-			item.ldate =["Date Lent:", e("ldate").value];
-			item.rdate =["Expected Return Date:", e("rdate").value];
-			item.comments =["Anymore Information?", e("comments").value];
+			item.dname =["Disc Name:", $("#dname").val()];
+			item.value =["Value:", $("#value").val()];
+			item.ldate =["Date Lent:", $("#ldate").val()];
+			item.rdate =["Expected Return Date:", $("#rdate").val()];
+			item.comments =["Anymore Information?", $("#comments").val()];
 
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Information Logged");
@@ -267,14 +265,14 @@ $(document).bind('pageinit',function(){
 	}
 	
 	function validate(d){
-		var getDname = e("dname");
-		var getFname = e("fname");
-		var getLname = e("lname");
+		var getFname = $("#fname");
+		var getLname = $("#lname");
+		var getDname = $("#dname");
 		
 	//	errMsg.innerHTML = "";
-			getDname.style.border = "1px solid black";
-			getFname.style.border = "1px solid black";
-			getLname.style.border = "1px solid black";
+			getFname.css = "1px solid black";
+			getLname.css = "1px solid black";
+			getDname.css = "1px solid black";
 
 		var message = [];
 	/*	if(getGroup.value === "--Movies--"){
@@ -287,29 +285,39 @@ $(document).bind('pageinit',function(){
 			getGroup.style.border = "1px solid red";
 			message.push(groupError);
 		} */
+	
 		if(getFname.value === ""){
 			var fnameError = "Please Type in First Name.";
-			getFname.style.border = "1px solid red";
-			message.push(fnameError);
+				$("#fname").css({
+					borderColor: "#ff0000",
+					hight: "1px"
+				});
+			message.push(fnameError);	
 		}
 		if(getLname.value === ""){
 			var lnameError = "Please Type in Last Name.";
-			getLname.style.border = "1px solid red";
-			message.push(lnameError);
+				$("#lname").css({
+					borderColor: "#ff0000",
+					hight: "1px"
+				});
+			message.push(lnameError);	
 		}
 		if(getDname.value === ""){
-			var DnameError = "Please Type in Last Name.";
-			getDname.style.border = "1px solid red";
-			message.push(DnameError);
+			var dnameError = "Please Type in Disc Name.";
+				$("#dname").css({
+					borderColor: "#ff0000",
+					hight: "1px"
+				});
+			message.push(dnameError);	
 		}
 		
 		if (message.length >= 1){
 			for(var i=0, j=message.length; i < j; i++){
-				var text = document.createElement("li");
-				text.innerHTML = message[i];
+				var text = $("li");
+				text.html = message[i];
 //				errMsg.appendChild(text);
 			}
-			d.preventDefault()
+			alert(message);
 			return false;
 		}else{
 			saveData(this.key);
@@ -326,10 +334,7 @@ $(document).bind('pageinit',function(){
 	wheelHouse();
 	
 	//links and submit button
-	var removeLink = e ("remove");
-	removeLink.addEventListener("click", deleteData);
-	var viewLink = e ("allAccounts");
-	viewLink.addEventListener("click", getData);
-	var save = e("submit");
-	save.addEventListener("click", validate);
+	$("#remove").on("click", deleteData)
+	$("#allAccounts").on("click", getData)
+	$("#submit").on("click", validate)
 
