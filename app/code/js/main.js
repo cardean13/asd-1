@@ -6,7 +6,6 @@ var parseAccountInfo = function(data){
         console.log(data);
 };
 
-$(document).ready(function(){
     var aiform = $("#accountInfo"),
         reliableValue ="No",
         jobValue ="No",
@@ -14,7 +13,6 @@ $(document).ready(function(){
         trustValue ="No",
         sexValue,
         id = Math.floor(Math.random()*100000001);
-    });
         
     function validate(){
         var aiform;    
@@ -36,11 +34,11 @@ $(document).ready(function(){
     }
     
     //create select field element, populate with options
-    function wheelHouse(){
+   /* function wheelHouse(){
         var formTag = document.getElementsByTagName("form"),
             selectLi = e("select"),
             makeSelect = document.createElement("select");
-            makeSelect.setAttribute("id", "groups");
+            makeSelect.setAttribute("id", "groups");*/
         //comeback to type of media
         /*for (var i=0, j=typeOfMedia.length; i<j; i++){
             var makeOption = document.createElement("option");
@@ -50,18 +48,19 @@ $(document).ready(function(){
             makeSelect.appendChild(makeOption);
         }*/
     //    selectLi.appendChild(makeSelect);
-    }
+  //  }
     
     //find value of radio button
         var reliableValue ="No",
             jobValue ="No",
             replaceValue ="No",
             trustValue ="No",
-            sexValue;
-
+            sexValue,
+			i = 0;
+   
     function getSelectedRadio(){
         var radios = document.forms[0].sex;
-        for(var i=0; i<radios.length; i++){
+        for( i=0; i<radios.length; i++){
             if(radios[i].checked){
                 sexValue = radios[i].value;
             }
@@ -157,33 +156,19 @@ $(document).ready(function(){
         if(localStorage.length === 0){
             alert("No saved accounts, default data added.");
         }
-        var makeDiv = document.createElement("div");
-        makeDiv.setAttribute("id", "items");
-        var makeList = document.createElement("ul");
-        makeDiv.appendChild(makeList);
-        document.body.appendChild(makeDiv);
-        e("items").style.display = "block";
-        for(var i = 0, len = localStorage.length; i<len; i++){
-            var makeli = document.createElement("li");
-            var linksLi = document.createElement("li");
-            
-            makeList.appendChild(makeli);
-            var key = localStorage.key(i);
+            var contact = $('<li class="singleContact"></li>').appendTo("#allInfo");
+           /* var makeli = document.createElement("li");
+            var linksLi = document.createElement("li");*/
+            //  makeList.appendChild(makeli);
+            var key = localStorage.key();
             var value = localStorage.getItem(key);
             var obj = JSON.parse(value);
-            var makeSubList = document.createElement("ul");
-            makeli.appendChild(makeSubList);
     //        getImage(obj.group[1], makeSubList);
             for(var n in obj){
-                var makeSubli = document.createElement("li");
-                makeSubList.appendChild(makeSubli);
-                var optSubText = obj[n][0]+" "+obj[n][1];
-                makeSubli.innerHTML = optSubText;
-                makeSubList.appendChild(linksLi);
+                $("<p>" + obj[n][0]+'</p>').appendTo(contact);
             }
-            makeItemLinks(localStorage.key(i), linksLi);
-        }
-    }
+           // makeItemLinks(localStorage.key(), linksLi);
+        };
     function autoFillData(){
         for(var n in JSON){
             var id = Math.floor(Math.random()*100000001);
@@ -221,8 +206,8 @@ $(document).ready(function(){
         var item = JSON.parse(value);
         toggleControls("off");
         
-        e("fname").value = item.fname[1];
-        e("lname").value = item.lname[1];
+        $("#fname").value = item.fname[1];
+        $("#lname").value = item.lname[1];
         var radios = document.forms[0].sex;
         for(var i=0; i<radios.length; i++){
             if(radios[i].value == "Male" && item.sex[1] == "Male"){
@@ -231,25 +216,25 @@ $(document).ready(function(){
                 radios[i].setAttribute("checked", "checked");
             }
         }
-        e("ageRange").value = item.age[1];        
+        $("$ageRange").value = item.age[1];        
         
         if(item.reliable[1] == "Yes"){
-            e("reliable").setAttribute("checked", "checked");
+            $("#reliable").setAttribute("checked", "checked");
         }
         if(item.job[1] == "Yes"){
-            e("job").setAttribute("checked", "checked");
+            $("#job").setAttribute("checked", "checked");
         }
         if(item.replace[1] == "Yes"){
-            e("replace").setAttribute("checked", "checked");
+            $("#replace").setAttribute("checked", "checked");
         }
         if(item.trust[1] == "Yes"){
-            e("trust").setAttribute("checked", "checked");
+            $("#trust").setAttribute("checked", "checked");
         }
-        e("dname").value = item.dname[1];
-        e("value").value = item.value[1];
-        e("ldate").value = item.ldate[1];
-        e("rdate").value = item.rdate[1];
-        e("comments").value = item.comments[1];
+        $("#dname").value = item.dname[1];
+        $("#value").value = item.value[1];
+        $("#ldate").value = item.ldate[1];
+        $("#rdate").value = item.rdate[1];
+        $("#comments").value = item.comments[1];
         
         $(saveData).unbind("click", saveData);
         $("#submit").value = "Edit Contact";
@@ -344,15 +329,14 @@ $(document).ready(function(){
         jobValue = "No",
         replaceValue = "No",
         trustValue = "No",
-        errMsg = e("errors")
+        errMsg = $("#errors")
     ;
-    wheelHouse();
+   // wheelHouse();
     
     //links and submit button
     $("#remove").on("click", deleteData);
     $("#allAccounts").on("click", getData);
     $("#submit").on("click", validate);
-
 
 $("#base").on("pageinit", function(){});
 $("#about").on("pageinit", function(){});
