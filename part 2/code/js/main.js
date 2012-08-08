@@ -2,6 +2,33 @@
 //MIU 0512
 //Project 3
 
+
+$("#base").on("pageinit", function(){
+
+	$("#jsonbutton").on("click", function(){
+	console.log("jsonbutton");
+		$("#listview").empty();
+			$.ajax({
+				url: "xhr/data.json",
+				type: "GET",
+				dataType: "json",
+				success: function(result){
+					console.log(result);
+					$.each(function(index, value){
+						$("<li>" + value.name + "</li>").appendTo("#listview");
+					});
+				},
+				error: function(result){
+					console.log(result);
+				}
+			});
+	});
+});
+
+
+
+
+
 var parseAccountInfo = function(data){
         console.log(data);
 };
@@ -338,10 +365,9 @@ var parseAccountInfo = function(data){
     $("#allAccounts").on("click", getData);
     $("#submit").on("click", validate);
 
-$("#base").on("pageinit", function(){});
 $("#about").on("pageinit", function(){});
 $("#contact").on("pageinit", function(){});
 $("#other").on("pageinit", function(){});
 $("#addAccount").on("pageinit", function(){});
-$("#").on("pageinit", function(){});
+$("#xhr").on("pageinit", function(){});
 $("#").on("pageinit", function(){});

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<items>
+	<person>
+		<First Name>Roger</First Name>
+		<Last Name>Wheeler</Last Name>
+		<Sex>Male</Sex>
+		<Age>26</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>Wii</Group>
+		<Disc Name>Super Mario Sunshine</Disc Name>
+		<Value>$20</Value>
+		<Date Lent>2012-1-22</Date Lent>
+		<Expected Return Date>2013-1-22</Expected Return Date>
+		<Anymore Information?>Works at Diebold.</Anymore Information?>
+	</person>
+	<person>
+		<First Name>Adam</First Name>
+		<Last Name>Smithberger</Last Name>
+		<Sex>Male</Sex>
+		<Age>25</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>No</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>Xbox 360</Group>
+		<Disc Name>Red Dead Redemption</Disc Name>
+		<Value>$30</Value>
+		<Date Lent>2012-4-12</Date Lent>
+		<Expected Return Date>2012-5-16</Expected Return Date>
+		<Anymore Information?>Bassist in my band.</Anymore Information?>
+	</person>
+	<person>
+		<First Name>Brittany</First Name>
+		<Last Name>Magazzeni</Last Name>
+		<Sex>Female</Sex>
+		<Age>23</Age>
+		<Is the borrower reliable?>Yes</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>Yes</Do you fully trust them?>
+		<Group>Blu-Ray</Group>
+		<Disc Name>How I met your mother</Disc Name>
+		<Value>$20</Value>
+		<Date Lent>2012-6-17</Date Lent>
+		<Expected Return Date>2012-6-29</Expected Return Date>
+		<Anymore Information?>Pete's wife.</Anymore Information?>
+	</person>
+	<person>
+		<First Name>Tim</First Name>
+		<Last Name>Benner</Last Name>
+		<Sex>Male</Sex>
+		<Age>24</Age>
+		<Is the borrower reliable?>No</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>Yes</If broken, could they replace it?>
+		<Do you fully trust them?>No</Do you fully trust them?>
+		<Group>DVD</Group>
+		<Disc Name>Terminator 2</Disc Name>
+		<Value>$30</Value>
+		<Date Lent>2012-7-11</Date Lent>
+		<Expected Return Date>2012-7-13</Expected Return Date>
+		<Anymore Information?>Works at Canton Music Center.</Anymore Information?>
+	</person>
+	<person>
+		<First Name>Myranda</First Name>
+		<Last Name>Butcher</Last Name>
+		<Sex>Female</Sex>
+		<Age>26</Age>
+		<Is the borrower reliable?>No</Is the borrower reliable?>
+		<Do they have a job?>Yes</Do they have a job?>
+		<If broken, could they replace it?>No</If broken, could they replace it?>
+		<Do you fully trust them?>No</Do you fully trust them?>
+		<Group>VHS</Group>
+		<Disc Name>Princess Bride</Disc Name>
+		<Value>$10</Value>
+		<Date Lent>2012-2-2</Date Lent>
+		<Expected Return Date>2012-2-10</Expected Return Date>
+		<Anymore Information?>Nickname Spoon.</Anymore Information?>
+	</person>
