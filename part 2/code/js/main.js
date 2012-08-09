@@ -5,7 +5,24 @@
 
 $("#base").on("pageinit", function(){
 
-    
+    $("#csvbutton").on("click", function(){
+    console.log("#csvbutton");
+        $("#listview").empty();
+            $.ajax({
+                url:"xhr/data.csv",
+                type: "GET",
+                dataType: "csv",
+                success: function(result){
+                console.log(result);
+                    $.each(function(index, value){
+                        $("<li>" + value.name + "</li>").appendTo("#listview");
+                    });
+                },
+                error: function(result){
+                    console.log(result);
+                }
+            });    
+    });
     $("#jsonbutton").on("click", function(){
     console.log("jsonbutton");
         $("#listview").empty();
@@ -45,10 +62,6 @@ $("#base").on("pageinit", function(){
     
 });
 
-
-
-
-
 var parseAccountInfo = function(data){
         console.log(data);
 };
@@ -74,32 +87,6 @@ $("#addAccount").on("pageinit", function(){
         });
     };
                 
-//wait till DOM is ready
-//window.addEventListener("DOMContentLoaded", function(){
-
-    //get element by ID function
-    function e(x){
-        var elemental = document.getElementById(x);
-        return elemental;
-    }
-        //create select field element, populate with options
-   /* function wheelHouse(){
-        var formTag = document.getElementsByTagName("form"),
-            selectLi = e("select"),
-            makeSelect = document.createElement("select");
-            makeSelect.setAttribute("id", "groups");*/
-        //comeback to type of media
-        /*for (var i=0, j=typeOfMedia.length; i<j; i++){
-            var makeOption = document.createElement("option");
-            var optText = typeOfMedia[i];
-            makeOption.setAttribute("value", optText);
-            makeOption.innerHTML = optText;
-            makeSelect.appendChild(makeOption);
-        }*/
-    //    selectLi.appendChild(makeSelect);
-  //  }
-        //find value of radio button
-   
     function getSelectedRadio(){
         var radios = document.forms[0].sex;
         for( i=0; i<radios.length; i++){
@@ -115,25 +102,19 @@ $("#addAccount").on("pageinit", function(){
         }else{
             reliableValue = "No";
         }
-//    }    
-    
-//    function getCheckBoxValue(){
+
         if($("job").checked){
             jobValue = $("job").value;
         }else{
             jobValue = "No";
         }
-//    }
-    
-//    function getCheckBoxValue(){
+
         if($("replace").checked){
             replaceValue = $("replace").value;
         }else{
             replaceValue = "No";
         }
-//    }
-    
-//    function getCheckBoxValue(){
+       
         if($("trust").checked){
             trustValue = $("trust").value;
         }else{
@@ -198,17 +179,12 @@ $("#addAccount").on("pageinit", function(){
             alert("No saved accounts, default data added.");
         }
             var contact = $('<li class="singleContact"></li>').appendTo("#allInfo");
-           /* var makeli = document.createElement("li");
-            var linksLi = document.createElement("li");*/
-            //  makeList.appendChild(makeli);
             var key = localStorage.key();
             var value = localStorage.getItem(key);
             var obj = JSON.parse(value);
-    //        getImage(obj.group[1], makeSubList);
             for(var n in obj){
                 $("<p>" + obj[n][0]+'</p>').appendTo(contact);
             }
-           // makeItemLinks(localStorage.key(), linksLi);
         };
     function autoFillData(){
         for(var n in JSON){
@@ -223,25 +199,7 @@ $("#addAccount").on("pageinit", function(){
         var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
         imageLi.appendChild(newImg);
     }
-    //make Item links function, creates edit and delete links
-  /*  function makeItemLinks(key, linksLi){
-        var editLink = document.createElement("a");
-        editLink.href = "#";
-        editLink.key = key;
-        var editText = "Edit Info";
-        editLink.addEventListener("click", editItem);
-        editLink.innerHTML = editText;
-        linksLi.appendChild(editLink);
-        
-        var deleteLink = document.createElement("a");
-        deleteLink.href = "#";
-        deleteLink.key = key;
-        var deleteText = "Delete Info";
-        deleteLink.addEventListener("click", deleteItem);
-        deleteLink.innerHTML = deleteText;
-        linksLi.appendChild(deleteLink);
-    }
-    */
+
     function editItem(){
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
@@ -316,18 +274,8 @@ $("#addAccount").on("pageinit", function(){
             getDname.css = "1px solid black";
 
         var message = [];
-    /*    if(getGroup.value === "--Movies--"){
-            var groupError = "Please Pick A Disc Format.";
-            getGroup.style.border = "1px solid red";
-            message.push(groupError);
-        }
-        if(getGroup.value === "--Games--"){
-            var groupError = "Please Pick A Disc Format.";
-            getGroup.style.border = "1px solid red";
-            message.push(groupError);
-        } */
-    
-        if(getFname.value === ""){
+
+        if(getFname.val === ""){
             var fnameError = "Please Type in First Name.";
                 $("#fname").css({
                     borderColor: "#ff0000",
@@ -350,8 +298,7 @@ $("#addAccount").on("pageinit", function(){
                     hight: "1px"
                 });
             message.push(dnameError);    
-        }
-        
+        } 
         if (message.length >= 1){
             for(var i=0, j=message.length; i < j; i++){
                 var text = $("li");
@@ -364,14 +311,10 @@ $("#addAccount").on("pageinit", function(){
             saveData(this.key);
         }
     } 
-    // variable defaults
-   // wheelHouse();
-    
     //links and submit button
     $("#remove").on("click", deleteData);
     $("#allAccounts").on("click", getData);
     $("#submit").on("click", valid);
-
 });
 $("#about").on("pageinit", function(){});
 $("#contact").on("pageinit", function(){});
