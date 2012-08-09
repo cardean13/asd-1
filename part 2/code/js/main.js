@@ -5,24 +5,44 @@
 
 $("#base").on("pageinit", function(){
 
-	$("#jsonbutton").on("click", function(){
-	console.log("jsonbutton");
-		$("#listview").empty();
-			$.ajax({
-				url: "xhr/data.json",
-				type: "GET",
-				dataType: "json",
-				success: function(result){
-					console.log(result);
-					$.each(function(index, value){
-						$("<li>" + value.name + "</li>").appendTo("#listview");
-					});
-				},
-				error: function(result){
-					console.log(result);
-				}
-			});
-	});
+    
+    $("#jsonbutton").on("click", function(){
+    console.log("jsonbutton");
+        $("#listview").empty();
+            $.ajax({
+                url: "xhr/data.json",
+                type: "GET",
+                dataType: "json",
+                success: function(result){
+                    console.log(result);
+                    $.each(function(index, value){
+                        $("<li>" + value.name + "</li>").appendTo("#listview");
+                    });
+                },
+                error: function(result){
+                    console.log(result);
+                }
+            });
+    });
+    $("#xmlbutton").on("click", function(){
+    console.log("#xmlbutton");
+        $("#listview").empty();
+            $.ajax({
+                url:"xhr/data.xml",
+                type: "GET",
+                dataType: "xml",
+                success: function(result){
+                console.log(result);
+                    $.each(function(index, value){
+                        $("<li>" + value.name + "</li>").appendTo("#listview");
+                    });
+                },
+                error: function(result){
+                    console.log(result);
+                }
+            });    
+    });
+    
 });
 
 
@@ -33,13 +53,16 @@ var parseAccountInfo = function(data){
         console.log(data);
 };
 
+$("#addAccount").on("pageinit", function(){
+
     var aiform = $("#accountInfo"),
         reliableValue ="No",
         jobValue ="No",
         replaceValue ="No",
         trustValue ="No",
         sexValue,
-        id = Math.floor(Math.random()*100000001);
+        id = Math.floor(Math.random()*100000001),
+        i = 0;
         
     function validate(){
         var aiform;    
@@ -59,8 +82,7 @@ var parseAccountInfo = function(data){
         var elemental = document.getElementById(x);
         return elemental;
     }
-    
-    //create select field element, populate with options
+        //create select field element, populate with options
    /* function wheelHouse(){
         var formTag = document.getElementsByTagName("form"),
             selectLi = e("select"),
@@ -76,14 +98,7 @@ var parseAccountInfo = function(data){
         }*/
     //    selectLi.appendChild(makeSelect);
   //  }
-    
-    //find value of radio button
-        var reliableValue ="No",
-            jobValue ="No",
-            replaceValue ="No",
-            trustValue ="No",
-            sexValue,
-			i = 0;
+        //find value of radio button
    
     function getSelectedRadio(){
         var radios = document.forms[0].sex;
@@ -147,7 +162,6 @@ var parseAccountInfo = function(data){
                 return false;
         }
     }
-        var   id = Math.floor(Math.random()*100000001);
 
     function saveData(key){
         if(!key){
@@ -291,7 +305,7 @@ var parseAccountInfo = function(data){
         }
     }
     
-    function validate(d){
+    function valid(){
         var getFname = $("#fname");
         var getLname = $("#lname");
         var getDname = $("#dname");
@@ -351,23 +365,14 @@ var parseAccountInfo = function(data){
         }
     } 
     // variable defaults
-    var sexValue,
-        reliableValue = "No",
-        jobValue = "No",
-        replaceValue = "No",
-        trustValue = "No",
-        errMsg = $("#errors")
-    ;
    // wheelHouse();
     
     //links and submit button
     $("#remove").on("click", deleteData);
     $("#allAccounts").on("click", getData);
-    $("#submit").on("click", validate);
+    $("#submit").on("click", valid);
 
+});
 $("#about").on("pageinit", function(){});
 $("#contact").on("pageinit", function(){});
 $("#other").on("pageinit", function(){});
-$("#addAccount").on("pageinit", function(){});
-$("#xhr").on("pageinit", function(){});
-$("#").on("pageinit", function(){});
