@@ -1,5 +1,5 @@
-var json = {
-		"person1": {
+{"singlecontact": [
+	{
 		"fname": ["First Name:", "Charlie"],
 		"lname": ["Last Name:", "Tritch"],
 		"sex": ["Sex:", "Female"],
@@ -15,7 +15,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-6-6"],
 		"comments": ["Anymore Information?:", "She's my employee."]
 		
-	},	"person2": {
+	},	
+	{
 		"fname": ["First Name:", "Brittany"],
 		"lname": ["Last Name:", "Gilmore"],
 		"sex": ["Sex:", "Female"],
@@ -31,7 +32,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-6-16"],
 		"comments": ["Anymore Information?:", "Katie's friend."]
 		
-	},	"person3": {
+	},	
+	{
 		"fname": ["First Name:", "Joan"],
 		"lname": ["Last Name:", "Hassan"],
 		"sex": ["Sex:", "Female"],
@@ -47,7 +49,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-5-31"],
 		"comments": ["Anymore Information?:", "Meine Mutter."]
 		
-	},	"person4": {
+	},	
+	{
 		"fname": ["First Name:", "Kyle"],
 		"lname": ["Last Name:", "Rawahneh"],
 		"sex": ["Sex:", "Male"],
@@ -63,7 +66,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-7-28"],
 		"comments": ["Anymore Information?:", "Friend of the family."]
 		
-	},	"person5": {
+	},	
+	{
 		"fname": ["First Name:", "Jason"],
 		"lname": ["Last Name:", "Baum"],
 		"sex": ["Sex:", "Male"],
@@ -79,7 +83,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-10-04"],
 		"comments": ["Anymore Information?:", "My lead guitarist."]
 		
-	},	"person6": {
+	},	
+	{
 		"fname": ["First Name:", "Dirk"],
 		"lname": ["Last Name:", "Adams"],
 		"sex": ["Sex:", "Male"],
@@ -95,7 +100,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-1-19"],
 		"comments": ["Anymore Information?:", "Best hacker I know."]
 		
-	},	"person7": {
+	},	
+	{
 		"fname": ["First Name:", "Donnie"],
 		"lname": ["Last Name:", "Young"],
 		"sex": ["Sex:", "Male"],
@@ -111,7 +117,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-4-4"],
 		"comments": ["Anymore Information?:", "Charlie's roommate."]
 		
-	},	"person8": {
+	},	
+	{
 		"fname": ["First Name:", "Emily"],
 		"lname": ["Last Name:", "McMillen"],
 		"sex": ["Sex:", "Female"],
@@ -127,7 +134,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-4-01"],
 		"comments": ["Anymore Information?:", "Katie's sister."]
 		
-	},	"person9": {
+	},	
+	{
 		"fname": ["First Name:", "Phillip"],
 		"lname": ["Last Name:", "Delashmutt"],
 		"sex": ["Sex:", "Male"],
@@ -143,8 +151,8 @@ var json = {
 		"rdate": ["Expected Return Date:", "2012-6-20"],
 		"comments": ["Anymore Information?:", "Lives in Connecticut."]
 		
-	},
-		"person10": {
+	},	
+	{
 		"fname": ["First Name:", "Sara"],
 		"lname": ["Last Name:", "Hassan"],
 		"sex": ["Sex:", "Female"],
@@ -161,6 +169,4 @@ var json = {
 		"comments": ["Anymore Information?:", "This is my sister."]
 		
 	}
-
-
-}
+]}

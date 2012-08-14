@@ -14,9 +14,9 @@ $("#base").on("pageinit", function(){
                 dataType: "csv",
                 success: function(result){
                 console.log(result);
-                    $.each(function(index, value){
+                 /*   $.each(function(index, value){
                         $("<li>" + value.name + "</li>").appendTo("#listview");
-                    });
+                    });*/
                 },
                 error: function(result){
                     console.log(result);
@@ -31,10 +31,17 @@ $("#base").on("pageinit", function(){
                 type: "GET",
                 dataType: "json",
                 success: function(result){
+                	console.log("json data success of pull");
                     console.log(result);
-                    $.each(function(index, value){
-                        $("<li>" + value.name + "</li>").appendTo("#listview");
-                    });
+                    $.each(result, function(){
+                    	$.each(this, function(index, value){
+			               console.log(value.fname[0], value.fname[1]);
+			                $("<li><p>" + value.fname[0] + value.fname[1]+ "</p><p>" 
+			                + value.lname[0] + value.lname[1] + "</p><p>" 
+			                + value.dname[0] + value.dname[1] + "</p></li>").appendTo("#listview");
+		                    });
+					})
+					$("#listview").listview("refresh");
                 },
                 error: function(result){
                     console.log(result);
