@@ -1,0 +1,5 @@
+function (doc) {
+	if (doc._id.substr(0,8) === "j-Person"){
+		emit(doc._id);
+	}
+};

@@ -1,0 +1,5 @@
+INDEX VERSION 1.122+/Users/Bioassassin/Desktop/asd-1/part3/asdproject/asdproject/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2799086280.index
+1030737021.index
+886623679.index
+1321038264.index

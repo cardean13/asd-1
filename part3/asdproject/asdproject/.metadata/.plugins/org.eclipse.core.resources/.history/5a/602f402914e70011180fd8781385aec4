@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- Yusef Hassan -->
+<!-- MIU 0512 -->
+<!-- Project 3 -->
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+			
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+		
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" /> 
+	<link rel="stylesheet" href="main.css" />
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="libs/modernizr.custom.min.js"></script>
+
+</head>
+	<body>
+		<!-- First Page -->
+		<div data-role="page" id="base">
+	
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<h1> Game&#47;DVD Lender </h1>
+		</div>
+				<div data-role="content" id="home">
+				<li data-role="list-divider">Help Remember Who Has Your Valuables.</li>
+		<a href="#addAccount" title="addInfo" rel="external" class="add">Add Info</a>
+			
+			<br>
+			<br>
+			<br>
+			<center>
+				<div id="xhrbuttons">
+					<a href="#" id="csvbutton" data-role="button">CSV</a>
+					<a href="#" id="jsonbutton" data-role="button">JSON</a>
+					<a href="#" id="xmlbutton" data-role="button">XML</a>
+				</div>
+				<ul id="listview" data-role="listview">
+									
+				</ul>
+			</center>
+			<br>
+			
+			<li><a href="#">Browse Media</a>
+
+				<ul>
+					<li>		
+					<div data-role="header" data-position="fixed" data-theme="a">
+						<h1> Game&#47;DVD Lender </h1>
+					</div>
+					<a href="#">Movies</a>
+						<ul>
+							<li>						
+							<div data-role="header" data-position="fixed" data-theme="a">
+								<h1> Game&#47;DVD Lender </h1>
+							</div>
+								<img src="VHS.png" />
+								<h3>VHS</h3>
+								<p>Classic</p>
+							</li>
+							<li>
+								<img src="Blu-Ray.png" />
+								<h3>Blu-Ray</h3>
+								<p>HD</p>
+							</li>
+							<li>
+								<img src="DVD.png" />
+								<h3>DVD</h3>
+								<p>Dying Market</p>
+							</li>
+						</ul>
+					<li><a href="#">Games</a>
+						<ul>
+							<li>						
+							<div data-role="header" data-position="fixed" data-theme="a">
+								<h1> Game&#47;DVD Lender </h1>
+							</div>
+								<img src="Xbox 360.png" />
+								<h3>Xbox 360</h3>
+								<p>Microsoft</p>
+							</li>
+							<li>
+								<img src="PS3.png" />
+								<h3>PS3</h3>
+								<p>Sony</p>
+							</li>
+							<li>
+								<img src="Wii.png" />
+								<h3>Wii</h3>
+								<p>Nintendo</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>			
+		</ul>
+		<div data-role="footer" data-position="fixed" data-id="all">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-icon="star">About us</a></li>
+					<li><a href="#contact" data-icon="gear">Contact Info</a></li>
+					<li><a href="#other" data-icon="search">Other Projects</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+	<div data-role="page" id="about" data-add-back-btn="true">
+		<div data-role="page" id="about" data-add-back-btn="true">
+		</div>
+		<div data-role="header" data-position="fixed">
+			<h1>About us</h1>
+		</div>
+		
+		<div data-role="content">
+			<p>Founded in 2012, here to rule the world.</p>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="all">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-icon="star" class="ui-btn-active">About us</a></li>
+					<li><a href="#contact" data-icon="gear">Contact Info</a></li>
+					<li><a href="#other" data-icon="search">Other Projects</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+	<div data-role="page" id="contact" data-add-back-btn="true">
+		<div data-role="page" id="contact" data-add-back-btn="true">
+		</div>
+		<div data-role="header" data-position="fixed">
+			<h1>Contact Info</h1>
+		</div>
+		
+		<div data-role="content">
+			<p>Email: deadeyemilitia@gmail.com</p>
+			<p>Email: cardean13@fullsail.edu</p>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="all">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-icon="star">About us</a></li>
+					<li><a href="#contact" data-icon="gear" class="ui-btn-active">Contact Info</a></li>
+					<li><a href="#other" data-icon="search">Other Projects</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="other" data-add-back-btn="true">
+		<div data-role="page" id="other" data-add-back-btn="true">
+		</div>
+		<div data-role="header" data-position="fixed">
+			<h1>Other Projects</h1>
+		</div>
+		
+		<div data-role="content">
+			<p>None to speak of!</p>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="all">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-icon="star">About us</a></li>
+					<li><a href="#contact" data-icon="gear">Contact Info</a></li>
+					<li><a href="#other" data-icon="search" class="ui-btn-active">Other Projects</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+  	<div data-role="page" id="addAccount" data-add-back-btn="true">
+	<div data-role="header" data-position="fixed">
+		<h1>Add Info</h1>
+	</div>
+	
+		<br>
+		<br>
+		<br>
+		<div> 
+			<a class="all" href="#" id="remove">Remove All Accounts</a>
+			<br><a class="all" href="#allAccounts" id="allAccounts">View All Accounts</a>
+			<a class="all" href="#addAccount" id="addAccount" style="display:none;">Add New Account</a>
+		</div>
+		
+	<div data-role="content">
+		<form action="#" method="post" id="accountInfo">
+			<legend>Account Information</legend>
+			<span>&#42;Required Data</span>
+
+			<div data-role="fieldcontain">
+				<label for="fname">&#42; First Name:</label>				
+				<input type="text" name="fname" id="fname" placeholder="John" class="required"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="lname">&#42; Last Name:</label>				
+				<input type="text" name="lname" id="lname" placeholder="Doe" class="required"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+					<input type="radio" value="Male" id="male" name="sex" /> 
+					<label for="male">Male</label>
+					
+					<input type="radio" value="Female" id="female" name="sex" /> 
+					<label for="female">Female</label>
+					
+					<label for="age"> Age (10-80)</label>
+					<input type="range" name="range" id="ageRange" min="10" max="80" value="18" step="1"/>
+			</div>	
+			
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+					<legend>Questions</legend>
+						<label for="reliable" >Is the borrower reliable?</label>
+						<input type="checkbox" value="Yes" name="reliable" id="reliable"/>
+						
+						<label for="job" >Do they have a job?</label>
+						<input type="checkbox" value="Yes" name="job" id="job"/>
+						
+						<label for="replace" >If broken, could they replace it?</label>
+						<input type="checkbox" value="Yes" name="replace" id="replace"/>
+						
+						<label for="trust" >Do you fully trust them?</label>
+						<input type="checkbox" value="Yes" name="trust" id="trust"/>
+				</fieldset>
+			</div>
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+					<legend>Disc Information</legend>
+						<label for="media">&#42; Type of Media</label>
+						<select name="media" id="media" data-native-menus="false">
+							<option data-placeholder="true">Please select one</option>
+							<optgroup label="Movies">
+								<option value="DVD">DVD</option>
+								<option value="VHS">VHS</option>
+								<option value="Blu-Ray">Blu-Ray</option>
+							</optgroup>
+							<optgroup label="Games">
+								<option value="Xbox 360">Xbox 360</option>
+								<option value="PS3">PS3</option>
+								<option value="Wii">Wii</option>
+							</optgroup>
+						</select>
+						<div data-role="fieldcontain">
+							<label for="dname">&#42; Disc Name:</label>				
+							<input type="text" name="dname" id="dname" class="required"/>
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="value"> Value:</label>				
+							<input type="text" name="value" id="value"/>
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="ldate"> Date Lent:</label>				
+							<input type="date" name="ldate" id="ldate"data-role="datebox"
+   									data-options='{"mode": "calbox", "calTodayButton": true}'/>
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="rdate"> Expected Return Date:</label>				
+							<input type="date" name="rdate" id="rdate"/>
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="comments"> Anymore information?:</label>				
+							<textarea id="comments"></textarea>
+						</div>						
+				</fieldset>
+			</div>
+			<input type="submit" value="Confirm Lending" href="#accountInfo" id="submit"  data-theme="b" />
+			<input type="reset"	value="Clear Form" id="clear" data-theme="c"/>
+			</div>
+	</form>
+	<form>
+		<div class="info2" id="allInfo" data-role="fieldcontain">
+				<li class="singleContact"></li>
+		</div>			
+	</form>
+		<br>
+		<br>
+		<br>
+		<div data-role="footer" id="foot" data-position="fixed" data-id="all">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-icon="star">About us</a></li>
+					<li><a href="#contact" data-icon="gear">Contact Info</a></li>
+					<li><a href="#other" data-icon="search">Other Projects</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i8n/jquery.mobile.datebox.i8n.en.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>

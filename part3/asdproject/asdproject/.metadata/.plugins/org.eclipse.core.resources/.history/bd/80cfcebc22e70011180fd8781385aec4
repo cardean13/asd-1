@@ -1,0 +1,9 @@
+$(document).ready(function(){
+	$.ajax({
+		"url": "view/json",
+		"dataType": "json",
+		"success": (data) {
+			console.log(data);
+		}
+	});
+});

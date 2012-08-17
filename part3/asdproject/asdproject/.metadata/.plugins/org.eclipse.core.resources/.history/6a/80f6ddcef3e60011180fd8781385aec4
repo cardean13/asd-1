@@ -1,0 +1,7 @@
+function (doc) {
+	if (doc._id.substr(0,6) === "Person"){
+		emit(doc._id{
+			"sex": doc.sex
+		});
+	}
+};

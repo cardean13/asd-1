@@ -1,0 +1,40 @@
+/*
+
+Yusef Hassan
+MIU 0512
+Project 3
+
+*/
+ 
+
+
+
+.add{	
+	border-radius: 15px;
+	text-align: center;
+	font-size: 40px;
+	line-height: 146px ;
+	display: block;
+	background-image:url(images/stock.png);
+	background-repeat: no-repeat;
+	margin: auto;
+	height: 170px;
+	width: 245px;
+}
+
+.all{
+	font: 16px Arial;
+	margin: 20px 10px;
+	width: 200px;
+	color: #000000;
+	text-align: center;
+
+}
+
+label.error{
+	display: block;
+	margin: 10px 0;
+	color: #cc0000;
+
+}
+

@@ -1,0 +1,9 @@
+function (doc) {
+	if (doc._id.substr(0,3) === "j-p"){
+		emit(doc._id{
+			"fname": doc.fname,
+			"lname": doc.lname,
+			"sex": doc.sex
+		});
+	}
+};

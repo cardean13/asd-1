@@ -1,0 +1,5 @@
+function (doc) {
+	if (doc._sex.substr(0,4) === "male"){
+		emit(doc._id);
+	}
+};

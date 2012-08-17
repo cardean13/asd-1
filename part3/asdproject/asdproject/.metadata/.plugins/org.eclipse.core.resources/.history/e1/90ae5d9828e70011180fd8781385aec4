@@ -1,0 +1,9 @@
+$(document).ready(function(){
+	$.ajax({
+		"url": "http://127.0.0.1:5984/asd_app/_design/app/_views/json",
+		"dataType": "json",
+		"success": (data) {
+				console.log(value);
+		}
+	});
+});

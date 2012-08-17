@@ -1,0 +1,7 @@
+function (doc) {
+	if (doc._id.substr(0,7) === "contact"){
+		emit(doc._id{
+			"age": doc.age
+		});
+	}
+};
