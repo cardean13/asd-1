@@ -8,16 +8,23 @@ $("#base").on("pageinit", function(){
     $("#jsonbutton").on("click", function(){
     console.log("jsonbutton");
         $("#listview").empty();
-            $.ajax({
+         /*   $.ajax({
                 url: "_view/json",
                 type: "GET",
-                dataType: "json",
+                dataType: "json",*/
+        $.couch.db("asd_app").view("app/json",{
                 success: function(data){
 	               		$.each(data.rows, function(index, contact){
 	        				var fname = contact.value.fname;        				
 	        				var lname = contact.value.lname;        				
 	        				var dname = contact.value.dname;
-			                $("<li><a><p>" + fname + "</p><p>" + lname +"</p><p>" + dname + "</p></li>").attr("href", "#").appendTo("#listview");
+			                $("<li>").append(
+			                		$("<a>") 
+			                			.attr("href", "contacts.html?json=" + fname)
+		                				.append("<p>" + fname + "</p><p>" + lname +"</p><p>" + dname + "</p>")
+			                )
+		                				.appendTo("#listview")
+			                
 		                    });
 					$("#listview").listview("refresh");
                 },
@@ -26,6 +33,23 @@ $("#base").on("pageinit", function(){
                 }
             });
     });
+});
+
+$("#contact2").live("pageshow", function(){
+	console.log("hello");
+	var urlData = $(this).data("url");
+	var urlParts = urlData.split("?");
+	var urlPairs = urlParts[1].split("&");
+	var urlValues = {};
+	for (var pair in urlPairs) {
+		var keyValue = urlPairs[pair].split("=");
+		var key = decodeURIComponent(keyValue[0]);
+		var value = decodeURIComponent(keyValue[1]);
+		urlValues[key] = value;
+        $("<li>").append(value)
+		.appendTo("#allInfo2");
+	};
+
 });
 
 var parseAccountInfo = function(data){
@@ -109,8 +133,30 @@ $("#addAccount").on("pageinit", function(){
                 return false;
         }
     }
-
-    function saveData(key){
+    var doc = {};
+    doc.fname =["First Name:", $("#fname").val()];
+    doc.lname =["Last Name:", $("#lname").val()];
+    doc.sex =["Sex:", sexValue];
+    doc.age =["Age:", $("#ageRange").val()];
+    doc.reliable =["Is the borrower reliable?", reliableValue];
+    doc.job =["Do they have a job?", jobValue];
+    doc.replace =["If broken, could they replace it?", replaceValue];
+    doc.trust =["Do you fully trust them?", trustValue];
+//    item.group =["Group:", e("groups").value];
+    doc.dname =["Disc Name:", $("#dname").val()];
+    doc.value =["Value:", $("#value").val()];
+    doc.ldate =["Date Lent:", $("#ldate").val()];
+    doc.rdate =["Expected Return Date:", $("#rdate").val()];
+    doc.comments =["Anymore Information?", $("#comments").val()];
+    $.couch.db("asd_app").saveDoc(doc, {
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(status) {
+            console.log(status);
+        }
+    });
+ /*   function saveData(key){
         if(!key){
             id = Math.floor(Math.random()*100000001);
         }else{
@@ -119,25 +165,10 @@ $("#addAccount").on("pageinit", function(){
         
         getSelectedRadio();
         getCheckBoxValue();        
-        var item = {};
-            item.fname =["First Name:", $("#fname").val()];
-            item.lname =["Last Name:", $("#lname").val()];
-            item.sex =["Sex:", sexValue];
-            item.age =["Age:", $("#ageRange").val()];
-            item.reliable =["Is the borrower reliable?", reliableValue];
-            item.job =["Do they have a job?", jobValue];
-            item.replace =["If broken, could they replace it?", replaceValue];
-            item.trust =["Do you fully trust them?", trustValue];
-        //    item.group =["Group:", e("groups").value];
-            item.dname =["Disc Name:", $("#dname").val()];
-            item.value =["Value:", $("#value").val()];
-            item.ldate =["Date Lent:", $("#ldate").val()];
-            item.rdate =["Expected Return Date:", $("#rdate").val()];
-            item.comments =["Anymore Information?", $("#comments").val()];
 
         localStorage.setItem(id, JSON.stringify(item));
         alert("Information Logged");
-    }
+    }*/
     
     function getData(){
         toggleControls("on");
@@ -273,15 +304,12 @@ $("#addAccount").on("pageinit", function(){
             }
             alert(message);
             return false;
-        }else{
-            saveData(this.key);
-        }
-    } 
+      //  }else{
+        //    saveData(this.key);
+        //}
+    } }
     //links and submit button
     $("#remove").on("click", deleteData);
     $("#allAccounts").on("click", getData);
     $("#submit").on("click", valid);
 });
-$("#about").on("pageinit", function(){});
-$("#contact").on("pageinit", function(){});
-$("#other").on("pageinit", function(){});

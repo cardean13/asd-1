@@ -192,12 +192,12 @@
 		<br>
 		<div> 
 			<a class="all" href="#" id="remove">Remove All Accounts</a>
-			<br><a class="all" href="#allAccounts" id="allAccounts">View All Accounts</a>
+			<br><a class="all" href="contacts.html" id="allAccounts">View All Accounts</a>
 			<a class="all" href="#addAccount" id="addAccount" style="display:none;">Add New Account</a>
 		</div>
 		
 	<div data-role="content">
-		<form action="#" method="post" id="accountInfo">
+		<form action="#" id="accountInfo">
 			<legend>Account Information</legend>
 			<span>&#42;Required Data</span>
 
@@ -283,14 +283,9 @@
 						</div>						
 				</fieldset>
 			</div>
-			<input type="submit" value="Confirm Lending" href="#accountInfo" id="submit"  data-theme="b" />
+			<input type="submit" value="Confirm Lending" href="#" id="submit"  data-theme="b" />
 			<input type="reset"	value="Clear Form" id="clear" data-theme="c"/>
 			</div>
-	</form>
-	<form>
-		<div class="info2" id="allInfo" data-role="fieldcontain">
-				<li class="singleContact"></li>
-		</div>			
 	</form>
 		<br>
 		<br>
@@ -312,6 +307,7 @@
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i8n/jquery.mobile.datebox.i8n.en.js"></script>
 	<script type="text/javascript" src="jquery.validate.min.js" ></script>
+	<script src="jquery.couch.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
